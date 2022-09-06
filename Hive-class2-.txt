@@ -1,0 +1,22 @@
+CREATE DATABASE department_data;
+SHOW DATABASES;
+USE DATABASE department_data;
+> CREATE TABLE department_date
+    > ( dept_id int,
+    > dept_name string,
+    > manager_id int,
+    > salary int)
+    > row format delimited
+    > fields terminated by ',';
+    > DESCRIBE department_date;
+
+>desc formatted department_date;
+
+# For data load from local
+load data local inpath '/home/cloudera/data/depart_data.csv' into table department_data;
+
+# Display column name
+set hive.cli.print.header = true;
+
+# Load data from hdfs location
+load data inpath 
